@@ -10,14 +10,17 @@ require('dotenv/config');
 // Enable cross Origin requests 
 app.use(cors());
 
-// Enables us to read json frmat responses
+// Enables us to read json format responses
 app.use(express.json());
 
 // Import Routes
 const authRoute = require('./routes/auth');
+const postRoute = require('./routes/posts');
 
 // Route Middlewares
 app.use('/api/user', authRoute);
+app.use('/api/posts', postRoute);
+
 // Server Port
 const PORT = 3001
 
